@@ -8,11 +8,13 @@ https://github.com/SampleApp05/Exam-Advanced;
 
 # Installation
 
-NB! For Windows use WSL
+**NB! For Windows use WSL**
 
-1. Install and run foundryup => curl -L https://foundry.paradigm.xyz | bash. Init a forge project => forge init if needed;
-2. Install hardhat => npm install --save-dev hardhat. Init a TS project => npx hardhat init if needed;
-3. Install dependencies => node update.js. Use flag -f/-h to install forge/hardhat only dependencies (common dependencies will be installed in all cases);
+1. Install and run foundryup => `curl -L https://foundry.paradigm.xyz | bash`.
+2. Init a forge project => `forge init` if needed;
+3. Install hardhat => `npm install --save-dev hardhat`.
+4. Init a TS project => `npx hardhat init` if needed;
+5. Install dependencies => `node update.js.` **Use flag -f/-h (no flag for all)** to install forge/hardhat only dependencies (common dependencies will be installed in all cases);
 
 # Tests
 
