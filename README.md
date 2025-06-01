@@ -73,19 +73,27 @@ Create and `.env` file and populate **all** of these in t:
 
 # Sepolia testnet transactions
 
-1. Create proxy
+1. Deploy Logic Template contract:
+
+- https://sepolia.etherscan.io/tx/0xc58b4d64f9df1657d30fcb1e3210591df8de50ac9aa85e4a73a1baaf931db260;
+
+2. Deploy Factory contract:
+
+- https://sepolia.etherscan.io/tx/0xc22c27df00648bb32f3cf27203d90b3eb2c42d3752ae70aa65a444e31b5b59da;
+
+3. Create proxy:
 
 - https://sepolia.etherscan.io/tx/0xc19781dde0cc01ac701217f87f9187bac35523c239bb203c78e49401a642e416;
 
-2. Fund proxy
+4. Fund proxy:
 
 - https://sepolia.etherscan.io/tx/0x7b73adda7c3d4a5626d4b8c63bfe681f6a050b55b396f476974f2930560444c7;
 
-3. Claim Scholarship
+5. Claim Scholarship
 
 - https://sepolia.etherscan.io/tx/0x09d7e74f35fda7c0ded1afe1fc5c5ca7bd7309d0d69d44985ed3bae1fa3ddda6
 
-4. Withdraw leftover funds
+6. Withdraw leftover funds
 
 - https://sepolia.etherscan.io/tx/0x4d6a58179fde24fa2d560ff38984dd63c36f310a79135da1c3146018c76abc3b
 
