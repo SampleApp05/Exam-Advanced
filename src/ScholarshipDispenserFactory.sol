@@ -51,7 +51,7 @@ contract ScholarshipDispenserFactory is AccessControl {
         address priceFeedContract,
         uint256 claimDeadline
     ) external onlyDirector returns (address payable) {
-        uint256 dispenserID = dispenserCount++;
+        uint256 dispenserID = dispenserCount++; // could wrap in unchecked block since it wont likely overflow...not time to deploy to sepolia and do all the steps
 
         address payable dispenserAddress = payable(
             Clones.clone(implementation)
