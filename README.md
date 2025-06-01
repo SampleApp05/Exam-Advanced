@@ -61,8 +61,8 @@ Create and `.env` file and populate **all** of these in t:
 3. In Remix:
 
 - Load the deployed Factory contract using its address.
-- Call the function to create a proxy (dispenser).
-- Copy the proxy address from the logs or transaction receip and used it to access the actual instance
+- Call the function to create a proxy (dispenser). **ETH/USD price feed address `0x694AA1769357215DE4FAC081bf1f309aDC325306`.**
+- Copy the proxy address from the logs or transaction receipt and use it to access the actual instance
 - **NB!** Make sure to run `source .env` before each script to load the correct env vars. **Clear remappings when using Remix IDE (delete entries)**;
 
 # Deployed Addresses
