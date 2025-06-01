@@ -97,7 +97,7 @@ Create and `.env` file and populate **all** of these in t:
 
 - https://sepolia.etherscan.io/tx/0x4d6a58179fde24fa2d560ff38984dd63c36f310a79135da1c3146018c76abc3b
 
-# Dependencies
+# Additional Packages Dependencies
 
 1. **dotenv** – Used for environment variables.
 2. **remixd** – For easier testing on Sepolia.
