@@ -30,11 +30,36 @@ Populate all of these:
 
 # Deployment
 
-1. Logic contract => forge script script/DeployLogic.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIMARY_WALLET_PRIVATE_KEY --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY. Use logged address for factory methods;
-2. Factory => forge script script/DeployFactory.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIMARY_WALLET_PRIVATE_KEY --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY;
-3. Build new Merkle tree if needed => edit merkleTreeBuilder.js and run it otherwise use merkle_data.json;
-4. Run remixd and use Remix IDE to interact with deployed factory => create a proxy and load it in Remix IDE => use proxy to test functionality (might need to activate remixd plugin in Remix IDE);
-   NB! Make sure to run "source .env" before each script to load the correct env vars. Clear remappings when using Remix IDE (delete entries);
+1. **Deploy Logic Contract**  
+   Use Forge to deploy the logic contract. The output address will be used by the factory.
+   ```bash
+   forge script script/DeployLogic.s.sol \
+     --rpc-url $SEPOLIA_RPC_URL \
+     --private-key $PRIMARY_WALLET_PRIVATE_KEY \
+     --broadcast \
+     --verify \
+     --etherscan-api-key $ETHERSCAN_API_KEY
+   ```
+2. **Deploy Factory Contract**
+   forge script script/DeployFactory.s.sol \
+    --rpc-url $SEPOLIA_RPC_URL \
+    --private-key $PRIMARY_WALLET_PRIVATE_KEY \
+    --broadcast \
+    --verify \
+    --etherscan-api-key $ETHERSCAN_API_KEY
+3. **Build new Merkle tree** (if needed)
+   edit merkleTreeBuilder.js and run it otherwise use merkle_data.json;
+
+# Interact with Contracts via Remix
+
+1. Run `remixd` in your project directory;
+2. Open Remix IDE and enable the Remixd plugin;
+3. In Remix:
+
+- Load the deployed Factory contract using its address.
+- Call the function to create a proxy (dispenser).
+- Copy the proxy address from the logs or transaction receip and used it to access the actuall instance
+  NB! Make sure to run "source .env" before each script to load the correct env vars. Clear remappings when using Remix IDE (delete entries);
 
 # Deployed Addresses
 
@@ -51,14 +76,14 @@ Populate all of these:
 
 # Dependencies
 
-1.  dotenv => used for env variables;
-2.  remixd => for easier testing on Sepolia;
-3.  @openzeppelin/merkle-tree => Merkle Tree generation;
-4.  Foundry:
-    3.1 foundry-rs/forge-std;
-    3.2 OpenZeppelin/openzeppelin-foundry-upgrades;
-    3.3 OpenZeppelin/openzeppelin-contracts-upgradeable;
-    3.4 smartcontractkit/chainlink-brownie-contracts
-5.  Hardhat
-    4.1 @openzeppelin/contracts-upgradeable;
-    4.2 chainlink/contracts;
+1. **dotenv** – Used for environment variables.
+2. **remixd** – For easier testing on Sepolia.
+3. **@openzeppelin/merkle-tree** – Merkle Tree generation.
+4. **Foundry**
+   - `foundry-rs/forge-std`
+   - `OpenZeppelin/openzeppelin-foundry-upgrades`
+   - `OpenZeppelin/openzeppelin-contracts-upgradeable`
+   - `smartcontractkit/chainlink-brownie-contracts`
+5. **Hardhat**
+   - `@openzeppelin/contracts-upgradeable`
+   - `chainlink/contracts`
